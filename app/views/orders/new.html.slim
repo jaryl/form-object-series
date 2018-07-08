@@ -1,0 +1,15 @@
+= simple_form_for @form, url: orders_path do |f|
+
+  = f.input :shipping_address
+
+  = f.input :shipping_same_as_billing_address, as: :boolean
+
+  = f.input :billing_address
+
+  = f.simple_fields_for :line_items do |line_items_fields|
+
+    = line_items_fields.input :description
+    = line_items_fields.input :quantity
+    = line_items_fields.input :unit_price
+
+  = f.submit 'Place Order'

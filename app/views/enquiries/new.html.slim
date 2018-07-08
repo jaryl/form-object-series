@@ -1,0 +1,7 @@
+= simple_form_for @form, url: enquiries_path do |f|
+
+  = f.input :email
+  = f.input :name
+  = f.input :message, as: :text
+
+  = f.submit

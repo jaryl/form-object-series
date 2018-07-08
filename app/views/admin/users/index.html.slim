@@ -1,0 +1,11 @@
+= simple_form_for @form, url: admin_users_path, method: :get do |f|
+
+  = f.input :term
+  = f.input :status, collection: @form.options_for_status, include_blank: 'Any status'
+  = f.input :group, collection: @form.options_for_group, include_blank: 'Any group'
+
+  = f.submit 'Search'
+
+ul
+  - @form.results.each do |person|
+    li = person.inspect

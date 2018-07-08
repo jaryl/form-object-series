@@ -1,0 +1,11 @@
+= simple_form_for @form, url: users_path do |f|
+
+  = f.input :terms_of_service, as: :boolean
+
+  = f.simple_fields_for :person do |person_fields|
+    = person_fields.input :name
+    = person_fields.input :email
+    = person_fields.input :password
+    = person_fields.input :password_confirmation
+
+  = f.submit

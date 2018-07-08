@@ -1,0 +1,7 @@
+= simple_form_for @form, url: invitations_path do |f|
+
+  = f.simple_fields_for :invitations do |invitation_fields|
+    = invitation_fields.input :name
+    = invitation_fields.input :email
+
+  = f.submit 'Send'
